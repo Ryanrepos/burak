@@ -407,8 +407,8 @@ GraphQL Api
 //     .join('');
 // }
 
-// console.log(removingDup('Ryaann')); 
-// console.log(removingDup('Engineerr'));  
+// console.log(removingDup('Ryaann'));
+// console.log(removingDup('Engineerr'));
 
 // ZF - TASK
 
@@ -421,25 +421,24 @@ GraphQL Api
 //         }
 
 //         return word;
-//     }).join(' '); 
+//     }).join(' ');
 // }
 
 // console.log(boshHarflarBilan("I want to be fullStack engineer!"));  // I Want to be FullStack Engineer!
 
-// ZG - TASK 
+// ZG - TASK
 
 // function toSnakeCase(input: string): string {
 //     return input
-//       .toLowerCase() 
+//       .toLowerCase()
 //       .replace(/[^a-z0-9\s]/g, '')
 //       .replace(/\s+/g, '_');
 //   }
-  
+
 //   const result = toSnakeCase('Learning programming is not hard, just understand the logic');
-//   console.log(result); 
-  // learning_programming_is_not_hard_just_understand_the_logic
-  
-  
+//   console.log(result);
+// learning_programming_is_not_hard_just_understand_the_logic
+
 // ZH-TASK:
 
 // function missedNums(list: number[]): number[] {
@@ -461,8 +460,7 @@ GraphQL Api
 // }
 
 // const numbers = [1, 22, 33];
-// console.log(missedNums(numbers)); 
-
+// console.log(missedNums(numbers));
 
 /*
 
@@ -492,18 +490,41 @@ GraphQL Api
 
 // @MITASK
 
-function calculate(arr: any[]): number[] {
+// function calculate(arr: any[]): number[] {
 
-  const arr1 = arr.flat(Infinity);
+//   const arr1 = arr.flat(Infinity);
 
-  const sum = arr1.reduce((acc, num) => acc + num, 0);
+//   const sum = arr1.reduce((acc, num) => acc + num, 0);
 
-  return [sum];
+//   return [sum];
+// }
+
+// const nums = [1, 2, 3, 4, 0];
+// const raqamlar = [2, [4, 4, [2, 4]]];
+
+// console.log(calculate(nums));
+// console.log(calculate(raqamlar));
+// 10 va 16
+
+// ZK-TASK:
+
+// Shunday function yozing, u har soniyada bir marta consolega 1 dan 5 gacha bolgan raqamlarni chop etsin va 5 soniyadan keyin ishini toxtatsin.
+// MASALAN: printNumbers()
+
+// @MITASK
+
+function logs(count: number = 1) {
+  console.log(count);
+  if (count < 5) {
+    setTimeout(() => logs(count + 1), 1000);
+  }
 }
 
-const nums = [1, 2, 3, 4, 0];
-const raqamlar = [2, [4, 4, [2, 4]]];
-
-console.log(calculate(nums)); 
-console.log(calculate(raqamlar)); 
-// 10 va 16
+logs();
+/*
+1
+2
+3
+4
+5
+*/
