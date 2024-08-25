@@ -513,14 +513,14 @@ GraphQL Api
 
 // @MITASK
 
-function logs(count: number = 1) {
-  console.log(count);
-  if (count < 5) {
-    setTimeout(() => logs(count + 1), 1000);
-  }
-}
+// function logs(count: number = 1) {
+//   console.log(count);
+//   if (count < 5) {
+//     setTimeout(() => logs(count + 1), 1000);
+//   }
+// }
 
-logs();
+// logs();
 /*
 1
 2
@@ -528,3 +528,16 @@ logs();
 4
 5
 */
+
+// ZL-TASK:
+
+// Shunday function yozing, u parametrda berilgan stringni kebab casega otkazib qaytarsin. Bosh harflarni kichik harflarga ham otkazsin.
+// MASALAN: stringToKebab(“I love Kebab”) return “i-love-kebab”
+
+function kebabCase(data: string): string {
+  return data.toLowerCase().trim().replace(/\s+/g, '-').replace(/[^\w-]+/g, '');     
+}
+
+console.log(kebabCase("Life is Good, if you write the code and understand it fully, especially backend code"));
+
+// life-is-good-if-you-write-the-code-and-understand-it-fully-especially-backend-code
