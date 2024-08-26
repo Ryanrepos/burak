@@ -534,10 +534,29 @@ GraphQL Api
 // Shunday function yozing, u parametrda berilgan stringni kebab casega otkazib qaytarsin. Bosh harflarni kichik harflarga ham otkazsin.
 // MASALAN: stringToKebab(“I love Kebab”) return “i-love-kebab”
 
-function kebabCase(data: string): string {
-  return data.toLowerCase().trim().replace(/\s+/g, '-').replace(/[^\w-]+/g, '');     
-}
+// function kebabCase(data: string): string {
+//   return data.toLowerCase().trim().replace(/\s+/g, '-').replace(/[^\w-]+/g, '');     
+// }
 
-console.log(kebabCase("Life is Good, if you write the code and understand it fully, especially backend code"));
+// console.log(kebabCase("Life is Good, if you write the code and understand it fully, especially backend code"));
 
 // life-is-good-if-you-write-the-code-and-understand-it-fully-especially-backend-code
+
+/*
+ZM-TASK:
+
+Shunday function yozing, u function parametrga berilgan raqamlarni orqasiga ogirib qaytarsin.
+MASALAN: reverseInteger(123456789) return 987654321
+
+*/
+
+function reverse(nums: number): number {
+    const strng = nums.toString();
+
+    const resultStr = strng.split('').reverse().join('');
+
+    return parseInt(resultStr, 10);
+}
+
+console.log(reverse(2468)); // 8642
+console.log(reverse(2277)); // 7722
