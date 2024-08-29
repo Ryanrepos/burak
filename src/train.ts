@@ -550,13 +550,38 @@ MASALAN: reverseInteger(123456789) return 987654321
 
 */
 
-function reverse(nums: number): number {
-    const strng = nums.toString();
+// function reverse(nums: number): number {
+//     const strng = nums.toString();
 
-    const resultStr = strng.split('').reverse().join('');
+//     const resultStr = strng.split('').reverse().join('');
 
-    return parseInt(resultStr, 10);
+//     return parseInt(resultStr, 10);
+// }
+
+// console.log(reverse(2468)); // 8642
+// console.log(reverse(2277)); // 7722
+
+/*
+ZN-TASK:
+
+Shunday function yozing, uni array va number parametri bolsin. Ikkinchi parametrda berilgan raqamli indexgacha arrayni orqasiga ogirib qaytarsin.
+MASALAN: rotateArray([1, 2, 3, 4, 5, 6], 3) return [5, 6, 1, 2, 3, 4]
+*/
+
+function rotateArr<T>(array: T[], countingRotation: number): T[] {
+    const length = array.length;
+    countingRotation = countingRotation % length;
+  
+    if (countingRotation === 0) {
+        return array;
+    }
+  
+    return array.slice(countingRotation).concat(array.slice(0, countingRotation));
 }
 
-console.log(reverse(2468)); // 8642
-console.log(reverse(2277)); // 7722
+const numbers = [1, 2, 3, 4, 5, 6];
+const rotatedNumbers = rotateArr(numbers, 2);
+console.log(rotatedNumbers); 
+//[3, 4, 5, 6, 1, 2]
+
+
