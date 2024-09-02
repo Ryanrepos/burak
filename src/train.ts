@@ -535,7 +535,7 @@ GraphQL Api
 // MASALAN: stringToKebab(“I love Kebab”) return “i-love-kebab”
 
 // function kebabCase(data: string): string {
-//   return data.toLowerCase().trim().replace(/\s+/g, '-').replace(/[^\w-]+/g, '');     
+//   return data.toLowerCase().trim().replace(/\s+/g, '-').replace(/[^\w-]+/g, '');
 // }
 
 // console.log(kebabCase("Life is Good, if you write the code and understand it fully, especially backend code"));
@@ -568,20 +568,52 @@ Shunday function yozing, uni array va number parametri bolsin. Ikkinchi parametr
 MASALAN: rotateArray([1, 2, 3, 4, 5, 6], 3) return [5, 6, 1, 2, 3, 4]
 */
 
-function rotateArr<T>(array: T[], countingRotation: number): T[] {
-    const length = array.length;
-    countingRotation = countingRotation % length;
-  
-    if (countingRotation === 0) {
-        return array;
-    }
-  
-    return array.slice(countingRotation).concat(array.slice(0, countingRotation));
-}
+// function rotateArr<T>(array: T[], countingRotation: number): T[] {
+//     const length = array.length;
+//     countingRotation = countingRotation % length;
 
-const numbers = [1, 2, 3, 4, 5, 6];
-const rotatedNumbers = rotateArr(numbers, 2);
-console.log(rotatedNumbers); 
+//     if (countingRotation === 0) {
+//         return array;
+//     }
+
+//     return array.slice(countingRotation).concat(array.slice(0, countingRotation));
+// }
+
+// const numbers = [1, 2, 3, 4, 5, 6];
+// const rotatedNumbers = rotateArr(numbers, 2);
+// console.log(rotatedNumbers);
 //[3, 4, 5, 6, 1, 2]
 
+// ZO-TASK:
 
+// Shunday function yozing, u parametrdagi string ichidagi qavslar miqdori balansda ekanligini aniqlasin. Ya'ni ochish("(") va yopish(")") qavslar soni bir xil bolishi kerak.
+// MASALAN: areParenthesesBalanced("string()ichida(qavslar)soni()balansda") return true
+
+// @MITASK
+
+function checkBalance(input: string): boolean {
+    let openingResult = 0;
+    let closingResult = 0;
+
+    for (let i = 0; i < input.length; i++) {
+        if (input[i] === '(') {
+            openingResult++;
+        }
+    }
+    for (let i = 0; i < input.length; i++) {
+        if (input[i] === ')') {
+            closingResult++;
+        }
+
+        if (closingResult > openingResult) {
+            return false;
+        }
+    }
+
+    return openingResult === closingResult;
+}
+
+console.log(checkBalance("Coding is fun (and challenging)")); 
+console.log(checkBalance("Keep calm and (code on")); 
+// true
+// false
