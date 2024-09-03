@@ -591,29 +591,58 @@ MASALAN: rotateArray([1, 2, 3, 4, 5, 6], 3) return [5, 6, 1, 2, 3, 4]
 
 // @MITASK
 
-function checkBalance(input: string): boolean {
-    let openingResult = 0;
-    let closingResult = 0;
+// function checkBalance(input: string): boolean {
+//     let openingResult = 0;
+//     let closingResult = 0;
 
-    for (let i = 0; i < input.length; i++) {
-        if (input[i] === '(') {
-            openingResult++;
-        }
-    }
-    for (let i = 0; i < input.length; i++) {
-        if (input[i] === ')') {
-            closingResult++;
-        }
+//     for (let i = 0; i < input.length; i++) {
+//         if (input[i] === '(') {
+//             openingResult++;
+//         }
+//     }
+//     for (let i = 0; i < input.length; i++) {
+//         if (input[i] === ')') {
+//             closingResult++;
+//         }
 
-        if (closingResult > openingResult) {
-            return false;
-        }
-    }
+//         if (closingResult > openingResult) {
+//             return false;
+//         }
+//     }
 
-    return openingResult === closingResult;
-}
+//     return openingResult === closingResult;
+// }
 
-console.log(checkBalance("Coding is fun (and challenging)")); 
-console.log(checkBalance("Keep calm and (code on")); 
+// console.log(checkBalance("Coding is fun (and challenging)")); 
+// console.log(checkBalance("Keep calm and (code on")); 
 // true
 // false
+
+/* 
+ZP-TASK:
+
+Shunday function yozing, u parametridagi array ichida 2 marta qaytarilgan sonlarni alohida araryda qaytarsin.
+MASALAN: findDuplicates([1,2,3,4,5,4,3,4]) return [3, 4]
+
+@MITASK
+*/
+
+function duplicated(arr: number[]): number[] {
+    const list = new Set<number>();
+    const duplicates = new Set<number>();
+
+    for (const num of arr) {
+        if (list.has(num)) {
+            duplicates.add(num);
+        } else {
+            list.add(num);
+        }
+    }
+
+    return Array.from(duplicates);
+}
+
+console.log(duplicated([1, 1, 2, 2, 3, 4, 5])); 
+console.log(duplicated([5, 5, 5, 5])); 
+// [1, 2]
+// [5]
