@@ -627,22 +627,47 @@ MASALAN: findDuplicates([1,2,3,4,5,4,3,4]) return [3, 4]
 @MITASK
 */
 
-function duplicated(arr: number[]): number[] {
-    const list = new Set<number>();
-    const duplicates = new Set<number>();
+// function duplicated(arr: number[]): number[] {
+//     const list = new Set<number>();
+//     const duplicates = new Set<number>();
 
-    for (const num of arr) {
-        if (list.has(num)) {
-            duplicates.add(num);
-        } else {
-            list.add(num);
-        }
-    }
+//     for (const num of arr) {
+//         if (list.has(num)) {
+//             duplicates.add(num);
+//         } else {
+//             list.add(num);
+//         }
+//     }
 
-    return Array.from(duplicates);
-}
+//     return Array.from(duplicates);
+// }
 
-console.log(duplicated([1, 1, 2, 2, 3, 4, 5])); 
-console.log(duplicated([5, 5, 5, 5])); 
+// console.log(duplicated([1, 1, 2, 2, 3, 4, 5])); 
+// console.log(duplicated([5, 5, 5, 5])); 
 // [1, 2]
 // [5]
+
+/*
+ZQ-TASK:
+
+Shunday function yozing, u parametridagi string ichidagi raqam va sonlarni sonini sanasin.
+MASALAN: countNumberAndLetters(“string152%\¥”) return {number:3, letter:6}
+
+@MITASK
+*/
+
+function calculating(input: string): { number: number, letter: number } {
+    let result = { number: 0, letter: 0 };
+
+    input.split('').forEach(char => {
+        if (/\d/.test(char)) {
+            result.number++;
+        } else if (/[a-zA-Z]/.test(char)) {
+            result.letter++;
+        }
+    });
+
+    return result;
+}
+const a = calculating("11&&**")
+console.log(a); 
