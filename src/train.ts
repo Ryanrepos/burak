@@ -613,8 +613,8 @@ MASALAN: rotateArray([1, 2, 3, 4, 5, 6], 3) return [5, 6, 1, 2, 3, 4]
 //     return openingResult === closingResult;
 // }
 
-// console.log(checkBalance("Coding is fun (and challenging)")); 
-// console.log(checkBalance("Keep calm and (code on")); 
+// console.log(checkBalance("Coding is fun (and challenging)"));
+// console.log(checkBalance("Keep calm and (code on"));
 // true
 // false
 
@@ -642,8 +642,8 @@ MASALAN: findDuplicates([1,2,3,4,5,4,3,4]) return [3, 4]
 //     return Array.from(duplicates);
 // }
 
-// console.log(duplicated([1, 1, 2, 2, 3, 4, 5])); 
-// console.log(duplicated([5, 5, 5, 5])); 
+// console.log(duplicated([1, 1, 2, 2, 3, 4, 5]));
+// console.log(duplicated([5, 5, 5, 5]));
 // [1, 2]
 // [5]
 
@@ -656,18 +656,33 @@ MASALAN: countNumberAndLetters(“string152%\¥”) return {number:3, letter:6}
 @MITASK
 */
 
-function calculating(input: string): { number: number, letter: number } {
-    let result = { number: 0, letter: 0 };
+// function calculating(input: string): { number: number, letter: number } {
+//     let result = { number: 0, letter: 0 };
 
-    input.split('').forEach(char => {
-        if (/\d/.test(char)) {
-            result.number++;
-        } else if (/[a-zA-Z]/.test(char)) {
-            result.letter++;
-        }
-    });
+//     input.split('').forEach(char => {
+//         if (/\d/.test(char)) {
+//             result.number++;
+//         } else if (/[a-zA-Z]/.test(char)) {
+//             result.letter++;
+//         }
+//     });
 
-    return result;
-}
-const a = calculating("11&&**")
-console.log(a); 
+//     return result;
+// }
+// const a = calculating("11&&**")
+// console.log(a);
+
+/*
+ZR-TASK:
+
+Shunday function yozing, u parametridagi arrayni ichidagi 1 marta kelgan elemnetni qaytarsin.
+MASALAN: singleNumber([4, 2, 1, 2, 1]) return 4
+
+@MITASK
+*/
+
+function singleNumber(nums: number[]): number {
+    return nums.reduce((acc, num) => acc ^ num, 0);
+  }
+  console.log(singleNumber([1, 2, 2, 3, 3])); 
+// 1
