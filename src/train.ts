@@ -681,8 +681,37 @@ MASALAN: singleNumber([4, 2, 1, 2, 1]) return 4
 @MITASK
 */
 
-function singleNumber(nums: number[]): number {
-    return nums.reduce((acc, num) => acc ^ num, 0);
-  }
-  console.log(singleNumber([1, 2, 2, 3, 3])); 
+// function uniqueNum(nums: number[]): number {
+//     return nums.reduce((acc, num) => acc ^ num, 0);
+//   }
+//   console.log(uniqueNum([1, 2, 2, 3, 3])); 
 // 1
+
+/*
+ZS-TASK:
+
+Shunday function yozing, u parametridagi string ichida 1 martadan ortiq qaytarilmagan birinchi harf indeksini qaytarsin.
+MASALAN: firstUniqueCharIndex(“stamp”) return 0
+
+@MITASK
+*/
+
+function firstIndex(str: string): number {
+  const charCount: { [key: string]: number } = {};
+
+  for (let i = 0; i < str.length; i++) {
+    const result = str[i];
+    charCount[result] = (charCount[result] || 0) + 1;
+  }
+
+  for (let i = 0; i < str.length; i++) {
+    if (charCount[str[i]] === 1) {
+      return i; 
+    }
+  }
+  return -1;
+}
+
+console.log(firstIndex("stamp"));  // 0
+console.log(firstIndex("booking"));  // 0
+
