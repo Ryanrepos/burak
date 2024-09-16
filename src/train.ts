@@ -696,22 +696,47 @@ MASALAN: firstUniqueCharIndex(“stamp”) return 0
 @MITASK
 */
 
-function firstIndex(str: string): number {
-  const charCount: { [key: string]: number } = {};
+// function firstIndex(str: string): number {
+//   const charCount: { [key: string]: number } = {};
 
-  for (let i = 0; i < str.length; i++) {
-    const result = str[i];
-    charCount[result] = (charCount[result] || 0) + 1;
+//   for (let i = 0; i < str.length; i++) {
+//     const result = str[i];
+//     charCount[result] = (charCount[result] || 0) + 1;
+//   }
+
+//   for (let i = 0; i < str.length; i++) {
+//     if (charCount[str[i]] === 1) {
+//       return i; 
+//     }
+//   }
+//   return -1;
+// }
+
+// console.log(firstIndex("stamp"));  // 0
+// console.log(firstIndex("booking"));  // 0
+
+/*
+ZT-TASK:
+
+Shunday function yozing, u parametridagi array ichida takrorlanmagan raqamlar yig'indisini qaytarsin.
+MASALAN: sumOfUnique([1,2,3,2]) return 4
+*/
+
+function hisoblash(nums: number[]): number {
+  const counting = new Map<number, number>();
+
+  for (let num of nums) {
+    counting.set(num, (counting.get(num) || 0) + 1);
   }
 
-  for (let i = 0; i < str.length; i++) {
-    if (charCount[str[i]] === 1) {
-      return i; 
-    }
+  let result = 0;
+  for (let [num, count] of counting) {
+      if (count === 1) {
+        result += num;
+      }
   }
-  return -1;
+
+  return result;
 }
 
-console.log(firstIndex("stamp"));  // 0
-console.log(firstIndex("booking"));  // 0
-
+console.log(hisoblash([2, 4, 2, 5])) // 9
