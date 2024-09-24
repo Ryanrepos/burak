@@ -722,21 +722,33 @@ Shunday function yozing, u parametridagi array ichida takrorlanmagan raqamlar yi
 MASALAN: sumOfUnique([1,2,3,2]) return 4
 */
 
-function hisoblash(nums: number[]): number {
-  const counting = new Map<number, number>();
+// function hisoblash(nums: number[]): number {
+//   const counting = new Map<number, number>();
 
-  for (let num of nums) {
-    counting.set(num, (counting.get(num) || 0) + 1);
-  }
+//   for (let num of nums) {
+//     counting.set(num, (counting.get(num) || 0) + 1);
+//   }
 
-  let result = 0;
-  for (let [num, count] of counting) {
-      if (count === 1) {
-        result += num;
-      }
-  }
+//   let result = 0;
+//   for (let [num, count] of counting) {
+//       if (count === 1) {
+//         result += num;
+//       }
+//   }
 
-  return result;
+//   return result;
+// }
+
+// console.log(hisoblash([2, 4, 2, 5])) // 9
+
+// ZU - TASK
+
+function areArraysEqual(arr1: number[], arr2: number[]): boolean {
+
+  return arr1.length === arr2.length && arr1.sort().every((value, index) => value === arr2.sort()[index]);
 }
 
-console.log(hisoblash([2, 4, 2, 5])) // 9
+console.log(areArraysEqual([1, 2, 3], [3, 1, 2])); 
+console.log(areArraysEqual([1, 2, 3], [3, 1, 2, 1])); 
+console.log(areArraysEqual([1, 2, 3], [4, 1, 2])); 
+
